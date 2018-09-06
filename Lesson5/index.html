@@ -1,0 +1,50 @@
+<html lang="zh">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-cale=1">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+    <link herf="../css/style.css" rel="stylesheet">
+</head>
+
+
+<body>
+    <div id="myApp">
+
+        <ol>
+            <game-item v-for="item in games" v-bind:game="item"></game-item>
+        </ol>
+    </div>
+
+    <script>
+        Vue.compon('game-item', {
+            props: ['game'],
+            template: '<li>{{game.title}}</li>'
+        })
+
+        var myApp = new Vue({
+            el: '#myApp',
+            data: {
+                games: [{
+                        title: 'uno'
+                    },
+                    {
+                        title: 'bake'
+                    },
+                    {
+                        title: 'swiming'
+                    }
+                ]
+
+            },
+            methods: {
+
+            }
+        });
+    </script>
+
+</body>
+
+</html>

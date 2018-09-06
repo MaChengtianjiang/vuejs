@@ -1,0 +1,30 @@
+<html lang="zh">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-cale=1">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+    <link herf="../css/style.css" rel="stylesheet">
+</head>
+
+
+<body>
+    <div id="myApp">
+        <p>您最喜欢的是：{{mygame}}</p>
+        <input v-model="mygame">
+    </div>
+
+    <script>
+        var myApp = new Vue({
+            el: '#myApp',
+            data: {
+                mygame: 'Dark Soul'
+            }
+        });
+    </script>
+
+</body>
+
+</html>

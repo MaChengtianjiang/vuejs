@@ -1,0 +1,42 @@
+<html lang="zh">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-cale=1">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+    <link herf="../css/style.css" rel="stylesheet">
+</head>
+
+
+<body>
+    <div id="myApp">
+        <p>您最喜欢的是：{{mygame}}</p>
+        
+        <button v-on:click="btnClick('我的世界')">我的世界</button>
+
+        <button v-on:click="btnClick('WarCrtaft')">WarCrtaft</button>
+        
+        <button v-on:click="btnClick('Mario')">Mario</button>
+        
+        <button @click="btnClick('Personal5')">Personal5</button>
+    </div>
+
+    <script>
+        var myApp = new Vue({
+            el: '#myApp',
+            data: {
+                mygame: 'Dark Soul'
+            },
+            methods: {
+                btnClick: function (pname) {
+                    this.mygame = pname;
+                }
+            }
+        });
+    </script>
+
+</body>
+
+</html>

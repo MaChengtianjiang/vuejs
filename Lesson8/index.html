@@ -1,0 +1,48 @@
+<html lang="zh">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-cale=1">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+    <link herf="../css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="myApp">
+        <p>原价{{price}}，税后{{priceInTax}}円,合人名币{{priceToRMB}}</p>
+        <button @click="btnClick(10800)">改成10800含税</button>
+    </div>
+
+    <script>
+        var myApp = new Vue({
+            el: '#myApp',
+            data: {
+                price: 0,
+            },
+            computed: {
+                priceInTax: {
+                    get: function () {
+                        return Math.round(this.price * 1.08);
+                    },
+                    set: function (value) {
+                        this.price = value / 1.08;
+                    }
+                },
+                priceToRMB: function () {
+                    return Math.round(this.priceInTax / 16.75);
+                },
+            },
+            methods: {
+                btnClick: function (newPrice) {
+                    this.priceInTax = newPrice;
+                }
+            }
+        });
+        myApp.price = 29980;
+    </script>
+
+</body>
+
+</html>

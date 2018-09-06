@@ -1,0 +1,36 @@
+<html lang="zh">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-cale=1">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+    <link herf="../css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="myApp">
+        <p>原价{{price}}，税后{{priceInTax}}円,合人名币{{priceToRMB}}</p>
+    </div>
+
+    <script>
+        var myApp = new Vue({
+            el: '#myApp',
+            data: {
+                price: 29980,
+            },
+            computed: {
+                priceInTax: function () {
+                    return this.price * 1.08;
+                },
+                priceToRMB: function () {
+                    return Math.round(this.price / 16.75);
+                }
+            }
+        });
+    </script>
+
+</body>
+
+</html>
