@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <link href="../css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="myApp">
+
+        <all-stars a='tottimctj' b='tottizyc'>
+            <span slot='c'>tottizzz</span>
+            <span slot='d'>tottbbb</span>
+            <span slot='e'>tottccc</span>
+        </all-stars>
+
+    </div>
+
+    <script>
+        Vue.component('all-stars', {
+            props: ['a', 'b'],
+            template: '<div>' +
+                '<div>A：{{a}}</div>' +
+                '<div>B：{{b}}</div>' +
+                '<div>C：<slot name= "c"></slot></div>' +
+                '<div>D：<slot name= "d"></slot></div>' +
+                '<div>E：<slot name= "e"></slot></div>' +
+                '</div>'
+        });
+        var myApp = new Vue({
+            el: '#myApp',
+            data: {
+
+            },
+            methods: {
+
+            },
+        });
+    </script>
+</body>
+
+</html>

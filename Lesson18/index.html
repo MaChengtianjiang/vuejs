@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <link href="../css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="myApp">
+        <h1>select game</h1>
+        <select v-model="checkedGame" style="width:210px;">
+            <option>A</option>
+            <option>B</option>
+            <option>C</option>
+            <option>D</option>
+            <option>E</option>
+        </select>
+<br>
+        <select v-model="checkedGames" multiple style="width:210px;">
+            <option>A</option>
+            <option>B</option>
+            <option>C</option>
+            <option>D</option>
+            <option>E</option>
+        </select>
+        <br>
+        <p>你选择的是:{{checkedGame}}</p>
+        <br>
+        <p>你选择的是:{{checkedGames}}</p>
+    </div>
+    <script>
+        var myApp = new Vue({
+            el: '#myApp',
+            data: {
+                checkedGame: [],
+                checkedGames: []
+            },
+            methods: {
+
+            },
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <link href="../css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="myApp">
+        <h1>select game</h1>
+        <input type="radio" id="生化7" value="生化7" v-model="checkedGames">
+        <label for="{{生化7}}">生化7</label>
+        <input type="radio" id="街霸" value="街霸" v-model="checkedGames">
+        <label for="{{街霸}}">街霸</label>
+        <input type="radio" id="洛克人" value="洛克人" v-model=" checkedGames">
+        <label for="{{洛克人}}">洛克人</label>
+
+        <h1>select platform</h1>
+        <input type="radio" id="PS" value="PS" v-model="platform">
+        <label for="{{PS}}">PS</label>
+        <input type="radio" id="XBOX" value="XBOX" v-model="platform">
+        <label for="{{XBOX}}">XBOX</label>
+        <input type="radio" id="SWICH" value="SWICH" v-model=" platform">
+        <label for="{{SWICH}}">SWICH</label>
+
+        <br>
+        <p>你选择的是:{{checkedGames}}</p>
+        <p>你选择的是:{{platform}}</p>
+    </div>
+    <script>
+        var myApp = new Vue({
+            el: '#myApp',
+            data: {
+                checkedGames: [],
+                platform: []
+            },
+            methods: {
+
+            },
+        });
+    </script>
+</body>
+
+</html>

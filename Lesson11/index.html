@@ -11,19 +11,21 @@
 
 <body>
     <div id="myApp">
-        <div v-bind:class="{active:isActive}">红色文本1</div>
-        <div :class="{active:isActive}">红色文本2</div>
+        <h1 v-if="result == 0">{{result}}None</h1>
+        <h1 v-else-if="result < 60">{{result}}Bad</h1>
+        <h1 v-else-if="result >= 60">{{result}}Good</h1>
+        <h1 v-else>{{result}}OK</h1>
         <button @click="btnClick">改变class吧</button>
     </div>
     <script>
         var myApp = new Vue({
             el: '#myApp',
             data: {
-                isActive: true,
+                result: 0
             },
             methods: {
                 btnClick: function () {
-                    this.isActive = !this.isActive;
+                    this.result = Math.round(Math.random() * 100);
                 },
             },
         });

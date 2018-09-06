@@ -11,20 +11,24 @@
 
 <body>
     <div id="myApp">
-        <div v-bind:class="{active:isActive}">红色文本1</div>
-        <div :class="{active:isActive}">红色文本2</div>
-        <button @click="btnClick">改变class吧</button>
+        <div>今天的天气是<today-weather></today-weather>
+        </div>
     </div>
+
     <script>
+        Vue.component('today-weather', {
+            template: '<strong> {{todayWeather}} </strong>',
+            data: function () {
+                return {
+                    todayWeather: '雨夹雪'
+                }
+            },
+        })
         var myApp = new Vue({
             el: '#myApp',
-            data: {
-                isActive: true,
-            },
+
             methods: {
-                btnClick: function () {
-                    this.isActive = !this.isActive;
-                },
+
             },
         });
     </script>

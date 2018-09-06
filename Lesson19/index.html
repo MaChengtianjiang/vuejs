@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <link href="../css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="myApp">
+        <label for="username">Name:</label>
+        <input v-model.lazy="username">
+        <label for="age">Age:</label>
+        <input v-model.number="age" type="number">
+        <label for="content">Content:</label>
+        <textarea v-model.trim="content" cols="55" rows ="8"> </textarea>
+
+        <h4>Message:</h4>
+
+        <p>{{username}}</p>
+        <p>{{age}}</p>
+        <p>
+            <pre> {{content}}</pre>
+        </p>
+
+    </div>
+
+    <script>
+        var myApp = new Vue({
+            el: '#myApp',
+            data: {
+                username: "",
+                checkUsername: false,
+                age: "",
+                content: ""
+            },
+            methods: {
+                checkUsername: function () {
+                    this.checkUsername = (this.username.length > 0);
+                }
+            },
+        });
+    </script>
+</body>
+
+</html>

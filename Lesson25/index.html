@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <link href="../css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="myApp">
+
+        <h1>Test Result</h1>
+        <test-result :score="50"></test-result>
+        <test-result :score="65"></test-result>
+        <test-result :score="95"></test-result>
+        <test-result :score="100"></test-result>
+    </div>
+
+    <script>
+        Vue.component('test-result', {
+            props: ['score'],
+            template: '<div> <strong>{{score}}分,{{testResult}}</strong> </div>',
+            computed: {
+                testResult: function () {
+                    var strResult = "";
+                    if (this.score < 60) {
+                        strResult = "Bad";
+                    } else if (this.score >= 60 && this.score < 90) {
+                        strResult = "Good";
+                    } else if (this.score > 90 && this.score < 100) {
+                        strResult = "Good";
+                    } else {
+                        strResult = "Prefeact";
+                    }
+                    return strResult;
+                }
+            }
+        })
+        var myApp = new Vue({
+            el: '#myApp',
+            data: {
+
+            },
+            methods: {
+
+            },
+        });
+    </script>
+</body>
+
+</html>
