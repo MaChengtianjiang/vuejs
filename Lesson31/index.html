@@ -13,22 +13,19 @@
     <div id="myApp">
 
 
-        <div>请输入您的名字:<input v-model="myName"></div>
-        <hr />
-        <say-hello :pname="myName">
-        </say-hello>
+        <h4>Message:</h4>
+
+        <p>
+            <pre> {{content}}</pre>
+        </p>
+
     </div>
 
     <script>
-        Vue.component('say-hello', {
-
-            props: ['pname'],
-            template: '<div>hello, {{pname}}</div>'
-        })
         var myApp = new Vue({
             el: '#myApp',
             data: {
-                myName: 'Koma'
+                
             },
             methods: {
 
